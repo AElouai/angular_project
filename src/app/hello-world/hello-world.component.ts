@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelloWorldComponent implements OnInit {
 
+  names: Array<String> = ['ali',  'yassin' , 'karim' ];
+  person =  {
+    name : 'ali',
+    style: 'red',
+  }
   constructor() { }
 
   ngOnInit() {
   }
+
+  changStyle = function (){
+    this.person.style = 'green';
+  };
 
 }

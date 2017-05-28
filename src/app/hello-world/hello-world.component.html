@@ -1,3 +1,20 @@
 <p>
   hello-world works!
 </p>
+
+<h6>
+  Interpolation on the name failed  {{person.name}}
+</h6>
+
+<h6>
+  1 Way Binding  <b [style.color]="person.style" >{{person.name}}</b>
+</h6>
+
+
+<h6>
+  Event Binding <b (click)="changStyle()"  >{{person.name}}</b>
+</h6>
+
+<h6>
+  2 Way Binding <input [(ngModel)]="person.style"  />
+</h6>
