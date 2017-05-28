@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { ProductItemComponent } from './product-item/product-item.component';
+import { RedColorPipe } from './red-color.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloWorldComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    RedColorPipe
   ],
   imports: [
     BrowserModule,
