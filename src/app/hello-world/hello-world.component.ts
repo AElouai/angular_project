@@ -11,7 +11,14 @@ export class HelloWorldComponent implements OnInit {
   person =  {
     name : 'ali',
     style: 'red',
-  }
+  };
+
+  fullNames = [
+    {first : 'karim' , last : 'lehlou'},
+    {first : 'samir' , last : 'samaoui'},
+    {first : 'anas' , last : 'benflan'}
+  ];
+
   constructor() { }
 
   ngOnInit() {

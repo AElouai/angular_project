@@ -1,20 +1,30 @@
-<p>
+<h6>
   hello-world works!
-</p>
-
-<h6>
+  <br/>
   Interpolation on the name failed  {{person.name}}
-</h6>
-
-<h6>
+  <br/>
   1 Way Binding  <b [style.color]="person.style" >{{person.name}}</b>
-</h6>
-
-
-<h6>
-  Event Binding <b (click)="changStyle()"  >{{person.name}}</b>
-</h6>
-
-<h6>
+  <br/>
+  Event Binding <button (click)="changStyle()"  >Green</button>
+  <br/>
   2 Way Binding <input [(ngModel)]="person.style"  />
+</h6>
+<h6>
+  *ngFor :
+  <ul>
+    <li *ngFor="let name of fullNames">
+      {{name.first}} {{name.last}}
+    </li>
+  </ul>
+</h6>
+<h6>
+  *ngIf :
+  <h3 *ngIf="person.style=='red'" [style.color]="person.style" > Red is the best Color </h3>
+
+  ngSwitch :
+  <div [ngSwitch]="person.style">
+    <h6 *ngSwitchCase="'red'">you chose red</h6>
+    <h6 *ngSwitchCase="'green'">you chose green </h6>
+    <h6 *ngSwitchDefault>you chose {{person.style}} </h6>
+  </div>
 </h6>
