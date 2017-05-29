@@ -1,6 +1,8 @@
 <div class='panel panel-danger'>
-  <div class='panel-heading text-center'>
+  <div class='panel-heading text-center row'>
     Product List
+    <input type="text" class="col-md-3 form-control" placeholder="Search">
+    <button type="submit" class="btn btn-default">Submit</button>
   </div>
 
   <div class='panel-body'>
@@ -18,8 +20,19 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-
+        <tr *ngFor='let product of products' (mouseover)="product.update=true" (mouseleave)="product.update=false">
+          <td  >
+            <img [src]='product.img' [title]='product.name' [alt]='product.name' class="img-circle img-responsive">
+          </td>
+          <td *ngIf="!product.update">{{product.name | uppercase}}</td>
+          <td *ngIf="product.update">
+            <input class="form-control" [(ngModel)]="product.name"  type="text"/>
+          </td>
+          <td>{{ product.price | currency:'USD':true:'1.2-2'}}</td>
+          <td>{{product.rating}}</td>
+          <td>{{product.date | date : 'longDate'}}</td>
+          <td>{{product.stock}}</td>
+          <td><i class="glyphicon glyphicon-edit"></i></td>
         </tr>
         </tbody>
       </table>

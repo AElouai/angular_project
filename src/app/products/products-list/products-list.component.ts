@@ -20,7 +20,8 @@ export class ProductsListComponent implements OnInit {
         unit : '$',
         rating : 2,
         stock:10,
-        date:'12/05/2019'
+        date:'12/05/2019',
+        update : false
       },
       {
         id : 2,
@@ -32,7 +33,8 @@ export class ProductsListComponent implements OnInit {
         unit : '$',
         rating : 2,
         stock:10,
-        date:'12/05/2019'
+        date:'12/05/2019',
+        update : false
       },
       {
         id : 3,
@@ -44,7 +46,8 @@ export class ProductsListComponent implements OnInit {
         unit : '$',
         rating : 2,
         stock:10,
-        date:'12/05/2019'
+        date:'12/05/2019',
+        update : false
       },
       {
         id : 4,
@@ -56,7 +59,8 @@ export class ProductsListComponent implements OnInit {
         unit : '$',
         rating : 2,
         stock:10,
-        date:'12/05/2019'
+        date:'12/05/2019',
+        update : false
       },
       {
         id : 5,
@@ -68,13 +72,18 @@ export class ProductsListComponent implements OnInit {
         unit : '$',
         rating : 2,
         stock:10,
-        date:'12/05/2019'
+        date:'12/05/2019',
+        update : false
       }
       ]
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  UpdateProduct(product){
+    product.update = !product.update;
   }
 
 }
