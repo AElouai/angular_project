@@ -4,16 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HelloWorldComponent } from './hello-world/hello-world.component';
-import { ProductItemComponent } from './product-item/product-item.component';
-import { RedColorPipe } from './red-color.pipe';
+import { ProductsListComponent } from './products/products-list/products-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloWorldComponent,
-    ProductItemComponent,
-    RedColorPipe
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,
