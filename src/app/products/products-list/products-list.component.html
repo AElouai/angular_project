@@ -22,7 +22,7 @@
         <tbody>
         <tr *ngFor='let product of products' (mouseover)="product.update=true" (mouseleave)="product.update=false">
           <td  >
-            <img [src]='product.img' [title]='product.name' [alt]='product.name' class="img-circle img-responsive">
+            <img [src]='product.img' [title]='product.name' [alt]='product.name' class="img-circle img-responsive img-size">
           </td>
           <td *ngIf="!product.update">{{product.name | uppercase}}</td>
           <td *ngIf="product.update">
