@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, OnChanges, OnDestroy} from '@angular/core';
 import { Product } from '../product';
 
 @Component({
@@ -6,9 +6,12 @@ import { Product } from '../product';
   templateUrl: './products-list.component.html',
   styleUrls: ['./products-list.component.css' ]
 })
-export class ProductsListComponent implements OnInit {
+export class ProductsListComponent implements OnInit , OnChanges, OnDestroy {
 
-  products: Product[] = [
+  products: Product[]  = [];
+
+  constructor() {
+    this.products = [
       {
         id : 1,
         name : 'Dell XPS Tower Special Edition',
@@ -81,11 +84,21 @@ export class ProductsListComponent implements OnInit {
         date: '12/05/2019',
         update : false
       }
-      ]
-
-  constructor() { }
+    ];
+  }
 
   ngOnInit() {
+    console.log(`ngOnInit`);
+  }
+  ngOnDestroy() {
+    console.log(`onDestroy`);
+  }
+  ngOnChanges(...args: any[]) {
+
+    console.log(`ngOnChanges`);
+
+    console.log('onChange fired');
+    console.log('changing', args);
   }
 
   UpdateProduct(product){
