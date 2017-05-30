@@ -1,4 +1,4 @@
-import { Component, OnInit , OnChanges } from '@angular/core';
+import {Component, OnInit, OnChanges, Input, Output , EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-rating-star',
@@ -7,19 +7,30 @@ import { Component, OnInit , OnChanges } from '@angular/core';
 })
 export class RatingStarComponent implements OnInit , OnChanges {
 
-  rating: number;
+  @Input() rating: number;
   width: number;
-  title: String;
+  stars = [ 1, 2 , 3 , 4 , 5 ];
+  preview = -1;
 
-  constructor() {
-    this.rating = 4;
+  @Output() rate: EventEmitter<number> =  new EventEmitter<number>();
+
+  onClick(rateStatus: number): void {
+    this.rate.emit(rateStatus);
   }
+
+  styles( index ) {
+    return {
+      'glyphicon': true,
+      'glyphicon-star': index < this.rating,
+      'glyphicon-star-empty': index >= this.rating
+    };
+  };
+
+  ngOnInit() {}
 
   ngOnChanges(): void {
-    this.width = this.rating * 50 / 5;
+    // Convert x out of 5 starts
+    // to y out of 86px width
+    this.width = this.rating * 100 / 5;
   }
-
-  ngOnInit() {
-  }
-
 }

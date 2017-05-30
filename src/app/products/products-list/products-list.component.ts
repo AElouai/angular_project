@@ -1,6 +1,7 @@
 import {Component, OnInit, OnChanges, OnDestroy} from '@angular/core';
 import { Product } from '../product';
 import { RatingStarComponent } from '../../all/rating-star/rating-star.component';
+import { FormsModule }    from '@angular/forms';
 
 
 @Component({
@@ -89,6 +90,17 @@ export class ProductsListComponent implements OnInit , OnChanges, OnDestroy {
     ];
   }
 
+
+  UpdateProduct(product) {
+    product.update = !product.update;
+  }
+
+  onRatingClicked(rating: number , index: number ): void {
+    console.log('I am here :', rating , index);
+    this.products[index - 1].rating = rating;
+  }
+
+
   ngOnInit() {
     console.log(`ngOnInit`);
   }
@@ -101,10 +113,6 @@ export class ProductsListComponent implements OnInit , OnChanges, OnDestroy {
 
     console.log('onChange fired');
     console.log('changing', args);
-  }
-
-  UpdateProduct(product){
-    product.update = !product.update;
   }
 
 }

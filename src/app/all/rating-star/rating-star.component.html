@@ -1,6 +1,9 @@
-<div >
-  <span class="glyphicon glyphicon-star"></span>
-  <span class="glyphicon glyphicon-star"></span>
-  <span class="glyphicon glyphicon-star"></span>
-  <span class="glyphicon glyphicon-star"></span>
+<div [title]="rating" >
+  <div style="width: 100px">
+    <span [ngClass]="styles(1)" (click)='onClick(2)'></span>
+    <span [ngClass]="styles(2)" (click)='onClick(3)'></span>
+    <span [ngClass]="styles(3)" (click)='onClick(4)'></span>
+    <span [ngClass]="styles(4)" (click)='onClick(5)'></span>
+    <span [ngClass]="styles(5)"  (click)='onClick(6)'></span>
+  </div>
 </div>
