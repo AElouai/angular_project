@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
+import { RatingStarComponent } from './all/rating-star/rating-star.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsListComponent,
-    TopNavComponent
+    TopNavComponent,
+    RatingStarComponent
   ],
   imports: [
     BrowserModule,

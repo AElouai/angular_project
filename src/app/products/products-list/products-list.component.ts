@@ -1,5 +1,7 @@
 import {Component, OnInit, OnChanges, OnDestroy} from '@angular/core';
 import { Product } from '../product';
+import { RatingStarComponent } from '../../all/rating-star/rating-star.component';
+
 
 @Component({
   selector: 'app-products-list',

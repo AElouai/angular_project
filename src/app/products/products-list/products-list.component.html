@@ -29,7 +29,7 @@
             <input class="form-control" [(ngModel)]="product.name"  type="text"/>
           </td>
           <td>{{ product.price | currency:'USD':true:'1.2-2'}}</td>
-          <td>{{product.rating}}</td>
+          <td><app-rating-star></app-rating-star></td>
           <td>{{product.date | date : 'longDate'}}</td>
           <td>{{product.stock}}</td>
           <td><i class="glyphicon glyphicon-edit"></i></td>
