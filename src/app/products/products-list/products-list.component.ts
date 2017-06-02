@@ -100,9 +100,12 @@ export class ProductsListComponent implements OnInit , OnChanges, OnDestroy {
   }
 
 
-  ngOnInit() {
-    this.products = this._DbServiceService.getProduct();
+
+  ngOnInit(): void {
+    this._DbServiceService.getProducts()
+      .subscribe(products => this.products = products);
   }
+
   ngOnDestroy() {
     console.log(`onDestroy`);
   }
