@@ -34,7 +34,7 @@
           </td>
           <td>{{product.date | date : 'longDate'}}</td>
           <td>{{product.stock}}</td>
-          <td><i class="glyphicon glyphicon-edit"></i></td>
+          <td><i class="glyphicon glyphicon-edit" [routerLink]="['/product',product.id]"></i></td>
         </tr>
         </tbody>
       </table>

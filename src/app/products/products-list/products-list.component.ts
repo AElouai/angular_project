@@ -7,8 +7,8 @@ import { DbServiceService } from '../../all/db-service.service';
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
-  styleUrls: ['./products-list.component.css' ],
-  providers: [DbServiceService]
+  styleUrls: ['./products-list.component.css' ]
+  // ,providers: [DbServiceService]
 })
 export class ProductsListComponent implements OnInit , OnChanges, OnDestroy {
 
